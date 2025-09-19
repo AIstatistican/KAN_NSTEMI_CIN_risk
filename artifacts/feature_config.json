@@ -1,0 +1,60 @@
+{
+  "numeric_features": [
+    "MAGGIC_score",
+    "HGB",
+    "PLT",
+    "NE",
+    "MO",
+    "LY",
+    "RDW",
+    "CRP",
+    "TROP",
+    "alb",
+    "LDL",
+    "HDL",
+    "tg",
+    "stentdiameter",
+    "time",
+    "ContrastVolume",
+    "plasmaOsm"
+  ],
+  "categorical_features": [
+    "previousCAD",
+    "HT",
+    "multiplelesion",
+    "procedure"
+  ],
+  "target_col": "CIN",
+  "numeric_means": {
+    "MAGGIC_score": 19.242142857142856,
+    "HGB": 13.946756949394157,
+    "PLT": 253.36514611546684,
+    "NE": 7.915773342836778,
+    "MO": 0.6997790449037776,
+    "LY": 1.973142551674982,
+    "RDW": 14.190021382751246,
+    "CRP": 10.58015918947739,
+    "TROP": 15.101526728439058,
+    "alb": 17.69192444761226,
+    "LDL": 107.2310085760188,
+    "HDL": 38.377652780038275,
+    "tg": 188.65716322166784,
+    "stentdiameter": 23.902922309337136,
+    "time": 108.53884533143264,
+    "ContrastVolume": 251.2473271560941,
+    "plasmaOsm": 292.99455882519317
+  },
+  "categorical_modes": {
+    "previousCAD": "0",
+    "HT": "1",
+    "multiplelesion": "0",
+    "procedure": "STENT"
+  },
+  "target_info": {
+    "mapping": {
+      "0": 0,
+      "1": 1
+    },
+    "positive_index": 1
+  }
+}

@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+
+.venv/
+venv/
+
+.DS_Store
+
+# artifacts kept (uncomment to ignore)
+# artifacts/
+
+.ipynb_checkpoints/
+model/
