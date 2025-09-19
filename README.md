@@ -16,11 +16,7 @@ python -m pip install pandas numpy scikit-learn matplotlib joblib openpyxl torch
 - Artifacts are already included in artifacts/: best_kan_model.pth, encoders.joblib, scaler.joblib, feature_config.json, synonyms.json.
 - Go directly to prediction via Python API, CLI, or Gradio UI below.
 
-Retraining (optional)
-```bash
-python KAN_app.py
-```
-Note: This will retrain on MAGGIC.xlsx and overwrite artifacts/.
+
 
 3) Predict for a single patient (Python API)
 ```python
@@ -85,8 +81,6 @@ python gradio_app.py
 ```
 Then open the printed local URL (usually http://127.0.0.1:7860) in your browser.
 
-- Training reads MAGGIC.xlsx from the repository root; adjust EXCEL_PATH in KAN_app.py if needed.
-- Ensure the categorical inputs use english-friendly words if you intend to share with non-Turkish users.
-- Re-training will regenerate artifacts and synonyms mapping.
+
 
 
