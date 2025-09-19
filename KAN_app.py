@@ -87,7 +87,7 @@ def _read_excel(path: str) -> pd.DataFrame:
     if not os.path.isabs(path):
         path = os.path.abspath(path)
     if not os.path.exists(path):
-        raise FileNotFoundError(f"Excel bulunamadı: {path}")
+        raise FileNotFoundError(f"Excel not found: {path}")
     return pd.read_excel(path)
 
 
@@ -252,12 +252,12 @@ def grid_search(train_input, train_label, test_input, test_label) -> Dict[str, A
     grid_sizes = [5, 10, 15]
     k_values = [3, 5, 7]
     learning_rates = [0.01, 0.1]
-    epochs = 50
+epochs = 50
 
     results: List[Dict[str, Any]] = []
     for g in grid_sizes:
-        for k in k_values:
-            for lr in learning_rates:
+    for k in k_values:
+        for lr in learning_rates:
                 auc, _ = train_and_eval(
                     train_input, train_label, test_input, test_label, g, k, lr, epochs
                 )
@@ -272,14 +272,14 @@ def grid_search(train_input, train_label, test_input, test_label) -> Dict[str, A
 def train_final_and_save(train_input, train_label, best: Dict[str, Any], input_dim: int, output_dim: int = 2) -> None:
     model = KAN(width=[input_dim, output_dim], grid=int(best["grid"]), k=int(best["k"]))
     optimizer = torch.optim.LBFGS(model.parameters(), lr=float(best["lr"]))
-    criterion = torch.nn.CrossEntropyLoss()
+criterion = torch.nn.CrossEntropyLoss()
 
-    def closure():
-        optimizer.zero_grad()
+def closure():
+    optimizer.zero_grad()
         output = model(train_input)
-        loss = criterion(output, train_label)
-        loss.backward()
-        return loss
+    loss = criterion(output, train_label)
+    loss.backward()
+    return loss
 
     epochs = 50
     for _ in range(epochs):
@@ -418,7 +418,7 @@ def main():
     model = KAN(width=bundle["width"], grid=bundle["grid"], k=bundle["k"])
     model.load_state_dict(bundle["state_dict"])
     model.eval()
-    with torch.no_grad():
+with torch.no_grad():
         logits = model(test_input)
         probs = torch.softmax(logits, dim=1)[:, 1].cpu().numpy()
         auc = roc_auc_score(test_label.cpu().numpy(), probs)
