@@ -397,6 +397,7 @@ def predict_cin_probability(patient: Dict[str, Any]) -> float:
 
 
 def main():
+    print("WARNING: Running KAN_app.py will retrain the model and overwrite artifacts/.")
     # 1) Load data
     df = _read_excel(EXCEL_PATH)
 

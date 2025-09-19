@@ -12,11 +12,15 @@ python -m pip install --upgrade pip
 python -m pip install pandas numpy scikit-learn matplotlib joblib openpyxl torch git+https://github.com/KindXiaoming/pykan.git pyyaml tqdm
 ```
 
-2) Train model and generate artifacts
+2) Use the pre-trained model (no training needed)
+- Artifacts are already included in artifacts/: best_kan_model.pth, encoders.joblib, scaler.joblib, feature_config.json, synonyms.json.
+- Go directly to prediction via Python API, CLI, or Gradio UI below.
+
+Retraining (optional)
 ```bash
 python KAN_app.py
 ```
-Artifacts saved to artifacts/: best_kan_model.pth, encoders.joblib, scaler.joblib, feature_config.json, synonyms.json.
+Note: This will retrain on MAGGIC.xlsx and overwrite artifacts/.
 
 3) Predict for a single patient (Python API)
 ```python
