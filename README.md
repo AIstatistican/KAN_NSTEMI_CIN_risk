@@ -85,35 +85,6 @@ python gradio_app.py
 ```
 Then open the printed local URL (usually http://127.0.0.1:7860) in your browser.
 
-- English field name mapping (input → canonical column)
-
-| Input (English)           | Canonical |
-|---------------------------|-----------|
-| MAGGIC score              | MAGGIC_score |
-| Hemoglobin                | HGB |
-| Platelets                 | PLT |
-| Neutrophils               | NE |
-| Monocyte                  | MO |
-| Lymphocyte                | LY |
-| RDW                       | RDW |
-| CRP                       | CRP |
-| Troponin I                | TROP |
-| Albumin                   | alb |
-| LDL                       | LDL |
-| HDL                       | HDL |
-| Triglyceride/Triglycerides| tg |
-| Stent diameter            | stentdiameter |
-| Pain-to-balloon time      | time |
-| Contrast volume           | ContrastVolume |
-| Plasma osmolality         | plasmaOsm |
-| Previous CAD (also: Pravious CAD) | previousCAD |
-| Hypertension              | HT |
-| Multiple lesion           | multiplelesion |
-| Procedure                 | procedure |
-
-The API is case-insensitive and also accepts underscore versions (e.g., previous_cad). See KEY_ALIASES in KAN_app.py for the full list.
-
-
 - Training reads MAGGIC.xlsx from the repository root; adjust EXCEL_PATH in KAN_app.py if needed.
 - Ensure the categorical inputs use english-friendly words if you intend to share with non-Turkish users.
 - Re-training will regenerate artifacts and synonyms mapping.
