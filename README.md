@@ -9,7 +9,7 @@ Quickstart
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
-python -m pip install pandas numpy scikit-learn matplotlib joblib openpyxl torch git+https://github.com/KindXiaoming/pykan.git pyyaml tqdm
+python -m pip install -r requirements.txt
 ```
 
 2) Use the pre-trained model (no training needed)
