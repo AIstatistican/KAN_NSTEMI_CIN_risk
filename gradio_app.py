@@ -35,8 +35,8 @@ def infer(
     return f"{prob * 100:.1f}%"
 
 
-with gr.Blocks(title="Risk prediction tool for contrast-induced nephropathy in patients with non-ST segment elevation myocardial infarction") as demo:
-    gr.Markdown("## Risk prediction tool for contrast-induced nephropathy in patients with non-ST segment elevation myocardial infarction")
+with gr.Blocks(title="Risk prediction tool for contrast-induced nephropathy in patients with ST segment elevation myocardial infarction") as demo:
+    gr.Markdown("## Risk prediction tool for contrast-induced nephropathy in patients with ST segment elevation myocardial infarction")
     with gr.Row():
         with gr.Column():
             maggic_score = gr.Number(label="MAGGIC score", value=25)
